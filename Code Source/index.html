@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fromulaire JS</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container"> 
+                <div class="header">
+                    <h2>Chercher un livre</h2>
+                </div>
+            <form id="form" class="form">
+                <div class="formControl">
+                    <label>.:Titre:.</label>
+                    <input type="text" placeholder="Titre" id="titre">
+                    <small></small>
+                </div>
+                <div class="formControl">
+                    <label>.:Auteur:.</label>
+                    <input type="text" placeholder="Auteur" id="auteur">
+                    <small></small>
+                </div>
+                <div class="Prix">
+                    <label>.:Prix:.</label>
+                    <input type="text" placeholder="$$$">
+                    <small></small>
+                </div>
+                <div class="formControl">
+                    <label>.:Date de publication:.</label>
+                    <input type="date">
+                    <small></small>
+                </div>
+                <div class="formControl">
+                    <label>.:Langue:.</label>
+                    <select id="Langues">
+                        <option>Anglais</option>
+                        <option>Arabe</option>
+                        <option>Françai</option>
+                    </select>
+                    <small></small>
+                </div>
+                <div class="type">
+                    <label>.:Type:.</label><br>
+                    <input type="radio" name="choix">
+                    <label for="Roman">Roman</label>
+                    <input type="radio" name="choix">
+                    <label for="Essai">Essai</label>
+                    <input type="radio" name="choix">
+                    <label for="Bande-Dessinée">Bande-Dessinée</label>
+                    <small></small>
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>

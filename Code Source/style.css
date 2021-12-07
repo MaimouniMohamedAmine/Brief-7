@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+input,select{
+    display:block;
+}
+.type input,label{
+display: inline-block;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*****************************/
+form{
+    padding:0% 0% 0% 0%;
+}
