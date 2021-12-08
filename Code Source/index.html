@@ -51,11 +51,24 @@
                     <label for="Essai">Essai</label>
                     <input type="radio" name="choix">
                     <label for="Bande-Dessinée">Bande-Dessinée</label>
-                    <small></small>
+                    <small id="msg"></small>
                 </div>
                 <input type="submit" value="Submit">
+                <table border=1px >
+                    <thead>
+                        <td>Titre</td>
+                        <td>Auteur</td>
+                        <td>Prix</td>
+                        <td>Date de publication</td>
+                        <td>Langue</td>
+                        <td>Type</td>
+                    </thead>
+                    <tbody id="table_body"></tbody>
+            
+                </table>
             </form>
         </div>
+
         <script src="main.js"></script>
     </body>
 </html>
