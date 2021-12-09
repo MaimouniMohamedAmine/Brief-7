@@ -26,8 +26,6 @@ function validateForm(e){
         inputs[i].nextElementSibling.innerHTML = "Champ Valide";
     }
     }
-   
-   
 
     // Tester le champ titre
     if(inputs[0].value != ""){
@@ -135,7 +133,7 @@ function validateForm(e){
                 cell4.innerHTML = inputs[3].value;
                 cell5.innerHTML = select.options[select.selectedIndex].value;
                 cell6.innerHTML = CellType;
-                newRow.insertCell(6).innerHTML = "<input type='button' value='Modifier'><input type='button' value='Supprimer'>"
+                // newRow.insertCell(6).innerHTML = "<input type='button' value='Modifier'><input type='button' value='Supprimer'>"
             }
     }
 form.addEventListener("submit",validateForm)
