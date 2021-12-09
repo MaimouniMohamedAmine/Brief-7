@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="container"> 
+        <div class="container">
                 <div class="header">
                     <h2>Chercher un livre</h2>
                 </div>
@@ -31,13 +31,13 @@
                 </div>
                 <div class="formControl">
                     <label>.:Date de publication:.</label>
-                    <input type="date">
+                    <input type="date" id="date">
                     <small></small>
                 </div>
                 <div class="formControl">
                     <label>.:Langue:.</label>
                     <select id="Langues">
-                        <option value="">Sélectionnez une Langue</option>
+                        <option disabled selected hidden value="">Sélectionnez une Langue</option>
                         <option value="Anglais">Anglais</option>
                         <option value="Arabe">Arabe</option>
                         <option value="Françai">Françai</option>
@@ -46,26 +46,24 @@
                 </div>
                 <div class="type">
                     <label>.:Type:.</label><br>
-                    <input type="radio" name="choix">
+                    <input type="radio" name="choix" class="check" value="Roman">
                     <label for="Roman">Roman</label>
-                    <input type="radio" name="choix">
+                    <input type="radio" name="choix" class="check" value="Essai">
                     <label for="Essai">Essai</label>
-                    <input type="radio" name="choix">
+                    <input type="radio" name="choix" class="check" value="Bande-Dessinée">
                     <label for="Bande-Dessinée">Bande-Dessinée</label>
-                    <small id="msg"></small>
+                    <small id="small"></small>
                 </div>
-                <input type="submit" value="Submit">
-                <table>
-                    <thead>
-                        <td>Titre</td>
-                        <td>Auteur</td>
-                        <td>Prix</td>
-                        <td>Date de publication</td>
-                        <td>Langue</td>
-                        <td>Type</td>
-                    </thead>
-                    <tbody id="table_body"></tbody>
-            
+                <input type="button" value="Soumettre">
+                    <tr>
+                        <th>Titre</th>
+                        <th>Auteur</th>
+                        <th>Prix</th>
+                        <th>Date de publication</th>
+                        <th>Langue</th>
+                        <th>Type</th>
+                        <th>Actions</th>
+                    </tr>
                 </table>
             </form>
         </div>
