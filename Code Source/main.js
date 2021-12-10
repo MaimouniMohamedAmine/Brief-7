@@ -1,7 +1,7 @@
 var check = document.getElementsByClassName("check")
 var form = document.getElementById("form");
 var inputs = document.getElementsByTagName("input");
-var prix = document.getElementsByClassName("Prix");
+var prix = document.getElementsByClassName("prix");
 var select = document.getElementById("Langues");
 var small = document.getElementById("small");
 var smol = document.getElementById("smol");
@@ -11,15 +11,17 @@ var titre = document.getElementById("titre");
 
 
 function validateForm(e){
+    
     e.preventDefault();
     var validationErrors = 0;
+    
 
     // Tester si les champs sont vides
     for(var i=0;i<inputs.length-4; i++){
         if(inputs[i].value == ""){
             validationErrors++;
             inputs[i].nextElementSibling.style.color = "red";
-            inputs[i].nextElementSibling.innerHTML = "Ce champ ne peux pas rester vide! ";
+            inputs[i].nextElementSibling.innerHTML = "Ce champ ne peux pas rester vide!";
         }   
     else{
         inputs[i].nextElementSibling.style.color = "green";
@@ -105,7 +107,7 @@ function validateForm(e){
             small.innerHTML = "Champ valide"
         }
 
-        /////////////-Tableau/insertCell-///////////////
+        ///////////-Tableau/insertCell-///////////////
 
         if(validationErrors==0){
             var newRow = table.insertRow(-1);
@@ -123,7 +125,7 @@ function validateForm(e){
                 {
                     if(check[i].checked)
                     {
-                        CellType=check[i].value;
+                        CellType = check[i].value;
                     }
                 }
                 
@@ -133,7 +135,10 @@ function validateForm(e){
                 cell4.innerHTML = inputs[3].value;
                 cell5.innerHTML = select.options[select.selectedIndex].value;
                 cell6.innerHTML = CellType;
-                // newRow.insertCell(6).innerHTML = "<input type='button' value='Modifier'><input type='button' value='Supprimer'>"
+                newRow.insertCell(6).innerHTML = "<input type='button' value='Modifier'><input type='button' value='Supprimer'>";
             }
     }
-form.addEventListener("submit",validateForm)
+document.getElementsByTagName("form")[0].addEventListener("submit", validateForm);
+// couldn't get it to work with the previous version
+//I had to call the form with its TagName instead of its Id 
+//Zoubair helped me to get it back   
