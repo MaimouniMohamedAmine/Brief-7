@@ -120,13 +120,13 @@ function validateForm(e){
             var cell6 = newRow.insertCell(5);
             
             
-            var CellType="";
+            var cellType="";
 
                 for(i=0;i<type.length;i++)
                 {
                     if(check[i].checked)
                     {
-                        CellType = check[i].value;
+                        cellType = check[i].value;
                     }
                 }
                 
@@ -135,7 +135,7 @@ function validateForm(e){
                 cell3.innerHTML = inputs[2].value;
                 cell4.innerHTML = inputs[3].value;
                 cell5.innerHTML = select.options[select.selectedIndex].value;
-                cell6.innerHTML = CellType;
+                cell6.innerHTML = cellType;
                 newRow.insertCell(6).innerHTML = "<input onClick='Edit(this)' type='button' value='Modifier'><input type='button' value='Supprimer' onClick = 'Delete(this)'>";
                                                  //`<a onClick="onEdit(this)">Edit</a>
                                                  //<a onClick="onDelete(this)">Delete</a>`;                      
@@ -146,6 +146,7 @@ function validateForm(e){
     
         }
     }
+    
         function Delete(td){
             if (confirm('Vous êtes sûre de supprimer cette entrée?')) {
             row = td.parentElement.parentElement;
@@ -157,7 +158,7 @@ function validateForm(e){
         function Edit(r){
             var i = r.parentNode.parentNode.rowIndex;
             var row = table.rows[i];
-            if(r.value == "Edit"){
+            if(r.value == "Modifier"){
                 inputs[0].value = row.cells[0].innerHTML;
                 inputs[1].value = row.cells[1].innerHTML;
                 inputs[2].value = row.cells[2].innerHTML;
@@ -167,7 +168,7 @@ function validateForm(e){
                 if(row.cells[4].innerHTML == "Anglais"){
                     select.selectedIndex = 1;
                 }
-                else if(row.cells[4].innerHTML == "English"){
+                else if(row.cells[4].innerHTML == "Anglais"){
                     select.selectedIndex = 2;
                 }
                 else{
@@ -180,7 +181,7 @@ function validateForm(e){
                         type[i].checked = true;
                     }
                 }
-                r.value="Save"
+                r.value="Sauvegarder"
                 document.getElementById("Soumettre").setAttribute("disabled","true");
             }
             else{
@@ -194,8 +195,14 @@ function validateForm(e){
                         row.cells[5] = type[i].value;
                     }
                 }
-                r.value = "Edit";
+                r.value = "Modifier";
                 document.getElementById("Soumettre").removeAttribute("disabled")
+                inputs[0].value=""
+                inputs[1].value=""
+                inputs[2].value=""
+                inputs[3].value=""
+                inputs[4].value=""
+                inputs[5].value=""
             }     }    
         document.getElementsByTagName("form")[0].addEventListener("submit", validateForm);
             // couldn't get it to work with the previous version
