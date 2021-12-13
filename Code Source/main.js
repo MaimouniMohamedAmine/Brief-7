@@ -165,13 +165,13 @@ function validateForm(e){
                 
                 // Language
                 if(row.cells[4].innerHTML == "Anglais"){
-                    lang.selectedIndex = 1;
+                    select.selectedIndex = 1;
                 }
                 else if(row.cells[4].innerHTML == "English"){
-                    lang.selectedIndex = 2;
+                    select.selectedIndex = 2;
                 }
                 else{
-                    lang.selectedIndex = 3;
+                    select.selectedIndex = 3;
                 }
 
                 // Type
@@ -184,11 +184,11 @@ function validateForm(e){
                 document.getElementById("Soumettre").setAttribute("disabled","true");
             }
             else{
-                row.cells[0].innerHTML = title.value;
-                row.cells[1].innerHTML = author.value;
-                row.cells[2].innerHTML = price.value;
-                row.cells[3].innerHTML = pub.value;
-                row.cells[4].innerHTML = lang.options[lang.selectedIndex].value;
+                row.cells[0].innerHTML = document.getElementById("titre").value;
+                row.cells[1].innerHTML = document.getElementById("auteur").value;
+                row.cells[2].innerHTML = document.getElementById("prix").value;
+                row.cells[3].innerHTML = document.getElementById("date").value;
+                row.cells[4].innerHTML = document.getElementById("Langues").value;
                 for(var i=0;i<type.length;i++){
                     if(type[i].checked){
                         row.cells[5] = type[i].value;
